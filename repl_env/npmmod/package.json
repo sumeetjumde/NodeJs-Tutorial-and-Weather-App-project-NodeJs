@@ -1,0 +1,15 @@
+{
+  "name": "npmmod",
+  "version": "1.0.0",
+  "description": "npmmode npm pakages",
+  "type": "module",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Sumeet jumde",
+  "license": "ISC",
+  "dependencies": {
+    "chalk": "^5.0.0"
+  }
+}

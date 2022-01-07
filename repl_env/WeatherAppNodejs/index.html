@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.6.1/css/all.min.css" integrity="sha512-BxQjx52Ea/sanKjJ426PAhxQJ4BPfahiSb/ohtZ2Ipgrc5wyaTSgTwPhhZ/xC66vvg+N4qoDD1j0VcJAqBTjhQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>WeatherAppNodejs</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="box">
+        <div class="wave_one"></div>
+        <div class="wave_two"></div>
+        <div class="wave_three"></div>
+
+    <div class="weathericons">
+        <i class="far fa-sun" style="color: #eccc68"></i>
+    </div>
+
+    <div class="info">
+        <h2 class="location"><i class="fas fa-street-view"></i>Pune,In</h2>
+        <p id="date">Wed | nov 23 | 10:49AM</p>
+        <h1 class="temp">26</h1>
+        <h3 class="tempmin_max">fdf</h3>
+    </div>
+    </div>
+
+    <script>
+        const curdata=document.getElementById("date");
+        let weathericons = document.getElementById("weathericons")
+
+        const tempstatus = "clouds";
+        const getcurrentday = ()=>{
+        const weekday = ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"];
+            let curtime = new Date();
+            console.log(weekday[curtime.getDate()]);
+            let day = weekday[curtime.getDate()];
+            return day;
+        }
+        const getcurrentTime=()=>{
+            const months = ["January","February","March","April","May","June","July","August","September","October","November","December"];
+            var now = new Date();
+            var month = months[now.getMonth() + 1];
+            var day = now.getDate();
+            var year = now.getFullYear();
+            console.log(month + "/" + day);
+
+            let hours = now.getHours();
+            let mins = now.getMinutes();
+
+            let perios = "AM";
+
+            if(hours > 11){
+                perios = "PM";
+                if(hours > 12) hours -= 12;
+            }
+            if(mins < 10){
+                mins= "0" + mins;
+            }
+            return `${month}${date}${hours}${mins}${perios}`;
+        }
+        curdata.innerHTML = getcurrentday() + "|" + getcurrentTime();
+        getcurrentday();
+    </script>
+</body>
+</html>
